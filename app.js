@@ -1,5 +1,5 @@
-// Portfolio v3 de Cheikhouna Kébé — interactions : compteurs animés,
-// révélation au défilement, menu mobile, lien actif dans la navigation.
+// Portfolio v4 de Cheikhouna Kébé (modèle barre latérale) — interactions :
+// compteurs animés, révélation au défilement, lien actif dans la navigation.
 //
 // Robustesse : la classe "js" est ajoutée sur <html> uniquement quand ce
 // script tourne. Le CSS ne masque les éléments .reveal que sous html.js,
@@ -71,24 +71,8 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
-  // ---------- Menu mobile ----------
-  var navToggle = document.getElementById("navToggle");
-  var siteNav = document.getElementById("siteNav");
-  if (navToggle && siteNav) {
-    navToggle.addEventListener("click", function () {
-      var open = siteNav.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    siteNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        siteNav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-
-  // ---------- Lien actif dans la navigation ----------
-  var navLinks = document.querySelectorAll(".site-nav a[href^='#']");
+  // ---------- Lien actif dans la navigation (barre latérale) ----------
+  var navLinks = document.querySelectorAll(".sidebar-nav a[href^='#']");
   var sections = Array.prototype.slice.call(navLinks)
     .map(function (link) { return document.querySelector(link.getAttribute("href")); })
     .filter(Boolean);
