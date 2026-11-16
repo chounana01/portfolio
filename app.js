@@ -1,5 +1,9 @@
-// Portfolio de Cheikhouna Kébé — interactions : compteurs animés, filtres projets,
+// Portfolio v3 de Cheikhouna Kébé — interactions : compteurs animés,
 // révélation au défilement, menu mobile, lien actif dans la navigation.
+//
+// Robustesse : la classe "js" est ajoutée sur <html> uniquement quand ce
+// script tourne. Le CSS ne masque les éléments .reveal que sous html.js,
+// donc sans JavaScript tout le contenu reste visible.
 
 (function () {
   "use strict";
@@ -50,21 +54,6 @@
   } else {
     counters.forEach(animateCounter);
   }
-
-  // ---------- Filtres projets ----------
-  var filterButtons = document.querySelectorAll(".filter-btn");
-  var cards = document.querySelectorAll(".project-card");
-  filterButtons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      filterButtons.forEach(function (b) { b.classList.remove("active"); });
-      btn.classList.add("active");
-      var filter = btn.getAttribute("data-filter");
-      cards.forEach(function (card) {
-        var show = filter === "all" || card.getAttribute("data-category") === filter;
-        card.classList.toggle("hidden", !show);
-      });
-    });
-  });
 
   // ---------- Révélation au défilement ----------
   var revealEls = document.querySelectorAll(".reveal");

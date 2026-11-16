@@ -5,23 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio de Cheikhouna Kébé — Analyste Data & BI | SQL • Python • Power BI. Diplômé de l'UQTR (oct. 2026), stage chez Sphère Contact, projets de données avec chiffres réels.">
   <title>Cheikhouna Kébé — Analyste Data &amp; BI</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header" id="top">
-    <div class="container header-inner">
+    <div class="container wide header-inner">
       <a class="brand" href="#top">CK<span>.</span></a>
       <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <nav class="site-nav" id="siteNav" aria-label="Navigation principale">
         <a href="#apropos">À propos</a>
         <a href="#parcours">Parcours</a>
+        <a href="#galerie">Galerie</a>
         <a href="#projets">Projets</a>
         <a href="#formation">Formation</a>
         <a href="#contact">Contact</a>
-        <a class="btn btn-small" href="cv-cheikhouna-kebe.pdf" download="CV-Cheikhouna-Kebe.pdf">Télécharger le CV</a>
+        <a class="nav-cv" href="cv-cheikhouna-kebe.pdf" download="CV-Cheikhouna-Kebe.pdf">Télécharger le CV</a>
       </nav>
     </div>
   </header>
@@ -29,21 +27,24 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <div class="container hero-inner">
-        <img class="hero-photo" src="photo.jpg" alt="Photo de Cheikhouna Kébé" width="150" height="150">
+      <div class="container wide hero-inner">
+        <div class="hero-photo-wrap">
+          <span class="hero-ring" aria-hidden="true"><span class="hero-ring-dot" aria-hidden="true"></span></span>
+          <img class="hero-photo" src="graduation-uqtr.jpg" alt="Cheikhouna Kébé, photo de graduation à l'UQTR, 2026" width="160" height="160">
+        </div>
         <div class="hero-text">
           <p class="hero-eyebrow">Disponible immédiatement · Temps plein · Prêt à me relocaliser</p>
           <h1>Cheikhouna Kébé</h1>
           <p class="hero-title">Analyste Data &amp; BI <span>| SQL • Python • Power BI</span></p>
           <p class="hero-lead">Diplômé de l'UQTR (oct. 2026), je transforme des données brutes en tableaux de bord exploitables — du nettoyage des données à la visualisation.</p>
-          <div class="hero-actions">
-            <a class="btn" href="cv-cheikhouna-kebe.pdf" download="CV-Cheikhouna-Kebe.pdf">⬇ Télécharger mon CV</a>
-            <a class="btn btn-outline" href="#projets">Voir mes projets</a>
-            <a class="btn btn-outline" href="https://www.linkedin.com/in/cheikhouna-kebe-2bb601396" target="_blank" rel="noopener">LinkedIn</a>
+          <div class="hero-links">
+            <a class="accent" href="cv-cheikhouna-kebe.pdf" download="CV-Cheikhouna-Kebe.pdf">⬇ Télécharger mon CV</a>
+            <a href="#projets">Voir mes projets</a>
+            <a href="https://www.linkedin.com/in/cheikhouna-kebe-2bb601396" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
-      <div class="container stats">
+      <div class="container wide stats">
         <div class="stat reveal">
           <span class="stat-number"><span class="counter" data-count="25000" data-format="int">25 000</span></span>
           <span class="stat-label">prospects analysés</span>
@@ -66,6 +67,7 @@
     <!-- À PROPOS -->
     <section id="apropos" class="section">
       <div class="container narrow reveal">
+        <span class="section-num">01 — À propos</span>
         <h2>À propos</h2>
         <p>Diplômé en informatique, cheminement science des données (UQTR, octobre 2026), je cherche un poste junior en analyse de données ou en BI.</p>
         <p>En stage chez <strong>Sphère Contact inc.</strong> (Trois-Rivières, mai–août 2026), j'ai développé un CRM pour l'assurance (React, FastAPI, PostgreSQL) et automatisé un ETL en Python / Pandas / SQL traitant de <strong>10&nbsp;000 à 60&nbsp;000 lignes</strong> de prospection — en remplacement de traitements manuels dans Excel.</p>
@@ -79,53 +81,89 @@
     </section>
 
     <!-- PARCOURS -->
-    <section id="parcours" class="section section-alt">
-      <div class="container narrow">
-        <h2 class="reveal">Parcours</h2>
+    <section id="parcours" class="section">
+      <div class="container narrow reveal">
+        <span class="section-num">02 — Parcours</span>
+        <h2>Parcours</h2>
         <ol class="timeline">
-          <li class="reveal">
+          <li>
             <span class="timeline-date">2019 – 2022 · Dakar</span>
-            <h3>DST en informatique — développement logiciel</h3>
-            <p>UCAD – École Supérieure Polytechnique (ESP), Dakar, Sénégal.</p>
+            <div>
+              <h3>DST en informatique — développement logiciel</h3>
+              <p>UCAD – École Supérieure Polytechnique (ESP), Dakar, Sénégal.</p>
+            </div>
           </li>
-          <li class="reveal">
+          <li>
             <span class="timeline-date">2022 · Dakar</span>
-            <h3>Premiers stages</h3>
-            <p>Assistant informatique chez MS-Associates (juin–sept. 2022) · Développeur backend PHP / MySQL au Domaine de l'impôt (avr.–juin 2022).</p>
+            <div>
+              <h3>Premiers stages</h3>
+              <p>Assistant informatique chez MS-Associates (juin–sept. 2022) · Développeur backend PHP / MySQL au Domaine de l'impôt (avr.–juin 2022).</p>
+            </div>
           </li>
-          <li class="reveal">
+          <li>
             <span class="timeline-date">2023 – 2026 · Trois-Rivières</span>
-            <h3>B. Sc. A. en informatique, science des données — UQTR</h3>
-            <p>90 crédits sur 90 · Moyenne cumulative 3,23 / 4,30 · Diplôme obtenu le 7 octobre 2026.</p>
+            <div>
+              <h3>B. Sc. A. en informatique, science des données — UQTR</h3>
+              <p>90 crédits sur 90 · Moyenne cumulative 3,23 / 4,30 · Diplôme obtenu le 7 octobre 2026.</p>
+            </div>
           </li>
-          <li class="reveal">
+          <li>
             <span class="timeline-date">Mai – août 2026 · Trois-Rivières</span>
-            <h3>Stage — Développeur logiciel Data et Backend, Sphère Contact inc.</h3>
-            <p>CRM pour l'assurance : React, FastAPI, PostgreSQL, intégration d'API. ETL automatisé Python / Pandas / SQL sur 10&nbsp;000 à 60&nbsp;000 lignes de prospection (noms, adresses, agents).</p>
+            <div>
+              <h3>Stage — Développeur logiciel Data et Backend, Sphère Contact inc.</h3>
+              <p>CRM pour l'assurance : React, FastAPI, PostgreSQL, intégration d'API. ETL automatisé Python / Pandas / SQL sur 10&nbsp;000 à 60&nbsp;000 lignes de prospection (noms, adresses, agents).</p>
+            </div>
           </li>
-          <li class="reveal">
+          <li>
             <span class="timeline-date">Nov. 2026 · Montréal</span>
-            <h3>En recherche d'un poste junior en données / BI</h3>
-            <p>Disponible immédiatement, temps plein, prêt à me relocaliser.</p>
+            <div>
+              <h3>En recherche d'un poste junior en données / BI</h3>
+              <p>Disponible immédiatement, temps plein, prêt à me relocaliser.</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
+    <!-- GALERIE -->
+    <section id="galerie" class="section">
+      <div class="container wide reveal">
+        <span class="section-num">03 — Galerie</span>
+        <h2>Mon parcours en images</h2>
+        <p class="section-intro">Trois moments : la fin de mon programme de technicien au Sénégal, ma graduation à l'UQTR, et la présentation de mon projet de stage.</p>
+        <div class="gallery">
+          <figure class="gallery-item">
+            <img src="graduation-uqtr.jpg" alt="Cheikhouna Kébé en toge de graduation, tenant son diplôme B. Sc. A. Informatique 2026" width="1179" height="1728" loading="lazy">
+            <figcaption>Graduation — B. Sc. A. en informatique, UQTR, 2026</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="dst-senegal.jpg" alt="Cheikhouna Kébé en boubou jaune tenant son document de fin de programme DST, UCAD-ESP, Dakar" width="828" height="1212" loading="lazy">
+            <figcaption>Diplôme Supérieur de Technicien (DST), UCAD-ESP, Dakar, 2022</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="poster-sphere-uqtr.jpg" alt="Cheikhouna Kébé devant son affiche scientifique Sphère Contact à l'UQTR" width="1170" height="1560" loading="lazy">
+            <figcaption>Présentation de l'affiche scientifique — projet de stage Sphère Contact, UQTR, 2026</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJETS -->
     <section id="projets" class="section">
-      <div class="container">
-        <h2 class="reveal">Projets</h2>
-        <p class="section-intro reveal">Des projets concrets, avec des chiffres réels. Les données du CRM sont 100&nbsp;% synthétiques.</p>
-        <div class="filters reveal" role="group" aria-label="Filtrer les projets">
-          <button class="filter-btn active" data-filter="all">Tous</button>
-          <button class="filter-btn" data-filter="data">Data &amp; BI</button>
-          <button class="filter-btn" data-filter="ia">IA &amp; ML</button>
-          <button class="filter-btn" data-filter="dev">Développement</button>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card reveal" data-category="data">
+      <div class="container wide reveal">
+        <span class="section-num">04 — Projets</span>
+        <h2>Projets</h2>
+        <p class="section-intro">Des projets concrets, avec des chiffres réels. Les données du CRM sont 100&nbsp;% synthétiques.</p>
+
+        <article class="project">
+          <span class="project-num">01</span>
+          <div>
             <h3>Dashboard Prospection CRM</h3>
+            <p class="project-cat">Data &amp; BI</p>
+            <figure class="project-visual">
+              <img src="dashboard-crm.png" alt="Capture du tableau de bord Prospection CRM : 25 000 prospects, taux de conversion 13,8 %, pipeline 17 553 257 $, 8 agents" width="1440" height="2766" loading="lazy">
+              <figcaption>Capture du tableau de bord — KPI, évolution mensuelle, entonnoir de conversion et répartition par ville.</figcaption>
+            </figure>
             <p>Tableau de bord Streamlit (Python / Pandas / SQL) : entonnoir de conversion, filtres, table consultable et export CSV.</p>
             <ul class="project-numbers">
               <li><strong>25&nbsp;000</strong> prospects</li>
@@ -134,80 +172,188 @@
               <li><strong>8</strong> agents · <strong>10</strong> villes</li>
             </ul>
             <p class="project-tech">Python · Pandas · SQL · Streamlit · Plotly</p>
-            <a href="https://github.com/chounana01/dashboard-prospection-crm" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </article>
-          <article class="project-card reveal" data-category="data">
+            <a class="project-link" href="https://github.com/chounana01/dashboard-prospection-crm" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-num">02</span>
+          <div>
             <h3>Analyse SQL du CRM</h3>
+            <p class="project-cat">Data &amp; BI</p>
+            <figure class="project-visual">
+              <svg class="chart-svg" viewBox="0 0 560 216" role="img" aria-label="Taux de conversion : Référencement 14,25 %, Longueuil 15,79 %, Terrebonne 15,12 %, conversion globale 13,80 %">
+                <text x="0" y="16" class="chart-group">Par source — meilleure source</text>
+                <text x="0" y="52" class="chart-label">Référencement</text>
+                <rect x="130" y="38" width="338" height="22" class="chart-bar"/>
+                <text x="476" y="55" class="chart-value">14,25&nbsp;%</text>
+                <text x="0" y="94" class="chart-group">Par ville</text>
+                <text x="0" y="130" class="chart-label">Longueuil</text>
+                <rect x="130" y="116" width="375" height="22" class="chart-bar chart-bar-accent"/>
+                <text x="513" y="133" class="chart-value">15,79&nbsp;%</text>
+                <text x="0" y="168" class="chart-label">Terrebonne</text>
+                <rect x="130" y="154" width="359" height="22" class="chart-bar"/>
+                <text x="497" y="171" class="chart-value">15,12&nbsp;%</text>
+                <line x1="458" y1="8" x2="458" y2="184" class="chart-ref"/>
+                <text x="458" y="204" text-anchor="middle" class="chart-ref-label">Conversion globale : 13,80&nbsp;%</text>
+              </svg>
+              <figcaption>Extrait des résultats : la meilleure source (Référencement) et les deux meilleures villes, face à la conversion globale.</figcaption>
+            </figure>
             <p>6 requêtes SQL commentées sur la même base : conversion par ville, par agent et par source, répartition par statut, pipeline en valeur.</p>
             <ul class="project-numbers">
-              <li><strong>33,2&nbsp;M$</strong> de pipeline actif</li>
+              <li><strong>25&nbsp;000</strong> prospects</li>
+              <li><strong>3&nbsp;449</strong> convertis</li>
               <li><strong>13,80&nbsp;%</strong> de conversion globale</li>
-              <li><strong>14,25&nbsp;%</strong> pour la meilleure source (Référencement)</li>
+              <li><strong>33,2&nbsp;M$</strong> de pipeline actif</li>
             </ul>
             <p class="project-tech">SQL · SQLite · Agrégations · Funnel d'analyse</p>
-            <a href="https://github.com/chounana01/analyse-sql-prospection" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </article>
-          <article class="project-card reveal" data-category="data">
+            <a class="project-link" href="https://github.com/chounana01/analyse-sql-prospection" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-num">03</span>
+          <div>
             <h3>Guide Dashboard Power BI</h3>
+            <p class="project-cat">Data &amp; BI</p>
+            <figure class="project-visual">
+              <div class="mini-dash" aria-label="Maquette du tableau de bord Power BI : 25 000 prospects, 13,8 % de conversion, 17,5 M$ de pipeline">
+                <div class="mini-dash-title">Tableau de bord — Prospection CRM</div>
+                <div class="mini-dash-kpis">
+                  <div class="mini-kpi"><span>25 000</span><small>prospects</small></div>
+                  <div class="mini-kpi"><span>13,8&nbsp;%</span><small>conversion</small></div>
+                  <div class="mini-kpi"><span>17,5&nbsp;M$</span><small>pipeline qualifié + converti</small></div>
+                </div>
+                <div class="mini-dash-bars" aria-hidden="true">
+                  <span style="height: 38%"></span><span style="height: 62%"></span><span style="height: 48%"></span><span style="height: 74%"></span><span style="height: 56%"></span><span style="height: 88%"></span><span style="height: 66%"></span>
+                </div>
+              </div>
+              <figcaption>Maquette du tableau de bord — extrait du guide : les mêmes KPI, construits pas à pas dans Power BI Desktop.</figcaption>
+            </figure>
             <p>Guide pas à pas pour construire le même tableau de bord dans Power BI Desktop : import, modèle, mesures DAX et mise en page.</p>
             <ul class="project-numbers">
               <li><strong>25&nbsp;000</strong> lignes nettoyées</li>
               <li><strong>7</strong> mesures DAX prêtes à copier-coller</li>
             </ul>
             <p class="project-tech">Power BI · DAX · Modélisation</p>
-            <a href="https://github.com/chounana01/powerbi-prospection-crm" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </article>
-          <article class="project-card reveal" data-category="ia">
+            <a class="project-link" href="https://github.com/chounana01/powerbi-prospection-crm" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-num">04</span>
+          <div>
             <h3>Détection de voitures YOLOv8</h3>
+            <p class="project-cat">IA &amp; ML</p>
+            <figure class="project-visual">
+              <svg class="chart-svg" viewBox="0 0 560 220" role="img" aria-label="Illustration de la détection : des voitures encadrées par des boîtes de détection">
+                <rect x="0" y="0" width="560" height="220" class="yolo-bg"/>
+                <rect x="0" y="150" width="560" height="70" class="yolo-road"/>
+                <line x1="0" y1="185" x2="560" y2="185" class="yolo-line"/>
+                <g>
+                  <rect x="60" y="112" width="110" height="42" rx="8" class="yolo-car"/>
+                  <rect x="82" y="96" width="62" height="24" rx="6" class="yolo-car"/>
+                  <circle cx="88" cy="156" r="10" class="yolo-wheel"/><circle cx="146" cy="156" r="10" class="yolo-wheel"/>
+                  <rect x="52" y="88" width="126" height="76" class="yolo-box"/>
+                  <rect x="52" y="66" width="64" height="20" class="yolo-tag"/><text x="60" y="80" class="yolo-tag-text">voiture</text>
+                </g>
+                <g>
+                  <rect x="330" y="118" width="96" height="38" rx="8" class="yolo-car"/>
+                  <rect x="350" y="104" width="54" height="22" rx="6" class="yolo-car"/>
+                  <circle cx="354" cy="158" r="9" class="yolo-wheel"/><circle cx="406" cy="158" r="9" class="yolo-wheel"/>
+                  <rect x="322" y="96" width="112" height="70" class="yolo-box"/>
+                  <rect x="322" y="74" width="64" height="20" class="yolo-tag"/><text x="330" y="88" class="yolo-tag-text">voiture</text>
+                </g>
+                <g>
+                  <rect x="470" y="126" width="70" height="30" rx="7" class="yolo-car"/>
+                  <circle cx="488" cy="158" r="8" class="yolo-wheel"/><circle cx="522" cy="158" r="8" class="yolo-wheel"/>
+                </g>
+              </svg>
+              <figcaption>Illustration de l'interface — les voitures détectées sont encadrées, puis comptées dans un tableau.</figcaption>
+            </figure>
             <p>Application Streamlit qui détecte et compte les voitures dans des images avec YOLOv8. Projet du cours SDD1004 à l'UQTR.</p>
             <ul class="project-numbers">
               <li><strong>YOLOv8</strong> préentraîné</li>
               <li>Image annotée + tableau des détections</li>
             </ul>
             <p class="project-tech">Python · YOLOv8 · Streamlit · Vision par ordinateur</p>
-            <a href="https://github.com/chounana01/yolo-car-detection" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </article>
-          <article class="project-card reveal" data-category="dev">
+            <a class="project-link" href="https://github.com/chounana01/yolo-car-detection" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-num">05</span>
+          <div>
             <h3>Gestion de véhicules full-stack + ML</h3>
+            <p class="project-cat">Développement</p>
+            <figure class="project-visual">
+              <table class="mini-table">
+                <caption>Maquette d'interface — exemple d'affichage</caption>
+                <thead><tr><th>Véhicule</th><th>Statut</th></tr></thead>
+                <tbody>
+                  <tr><td>Véhicule 01</td><td><span class="pill pill-ok">Disponible</span></td></tr>
+                  <tr><td>Véhicule 02</td><td><span class="pill pill-warn">En maintenance</span></td></tr>
+                  <tr><td>Véhicule 03</td><td><span class="pill pill-ok">Disponible</span></td></tr>
+                </tbody>
+              </table>
+            </figure>
             <p>Application web complète : CRUD des véhicules, visualisation par graphes et prédiction de prix par apprentissage automatique.</p>
             <ul class="project-numbers">
               <li><strong>3</strong> modèles testés : régression, KNN, arbre de décision</li>
             </ul>
             <p class="project-tech">Node.js · Express · MongoDB · Python · ML</p>
-            <a href="https://github.com/chounana01/gestion-vehicules" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </article>
-          <article class="project-card reveal" data-category="dev">
+            <a class="project-link" href="https://github.com/chounana01/gestion-vehicules" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-num">06</span>
+          <div>
             <h3>Gestion des décodeurs</h3>
+            <p class="project-cat">Développement</p>
+            <figure class="project-visual">
+              <table class="mini-table">
+                <caption>Maquette d'interface — exemple d'affichage</caption>
+                <thead><tr><th>Client</th><th>Décodeur</th><th>Statut</th></tr></thead>
+                <tbody>
+                  <tr><td>Client A</td><td>Déc. 01</td><td><span class="pill pill-ok">Actif</span></td></tr>
+                  <tr><td>Client B</td><td>Déc. 02</td><td><span class="pill pill-ok">Actif</span></td></tr>
+                  <tr><td>Client C</td><td>Déc. 03</td><td><span class="pill pill-warn">Inactif</span></td></tr>
+                </tbody>
+              </table>
+            </figure>
             <p>Application web Spring Boot pour gérer clients, décodeurs et utilisateurs, avec authentification et API REST.</p>
             <ul class="project-numbers">
               <li><strong>Java 17</strong> · Spring Boot · MySQL</li>
             </ul>
             <p class="project-tech">Java · Spring Boot · Spring Security · MySQL · Maven</p>
-            <a href="https://github.com/chounana01/gestion-decodeurs" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </article>
-        </div>
+            <a class="project-link" href="https://github.com/chounana01/gestion-decodeurs" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- FORMATION -->
-    <section id="formation" class="section section-alt">
-      <div class="container">
-        <h2 class="reveal">Formation</h2>
+    <section id="formation" class="section">
+      <div class="container wide reveal">
+        <span class="section-num">05 — Formation</span>
+        <h2>Formation</h2>
         <div class="degrees">
-          <article class="degree-card reveal">
+          <article class="degree">
             <h3>B. Sc. A. en informatique — science des données</h3>
             <p class="degree-meta">UQTR · Janv. 2023 – Oct. 2026 · 90 crédits sur 90 · Moyenne 3,23 / 4,30</p>
             <p>Grade obtenu le 7 octobre 2026.</p>
           </article>
-          <article class="degree-card reveal">
+          <article class="degree">
             <h3>DST en informatique — développement logiciel</h3>
             <p class="degree-meta">UCAD – ESP, Dakar · 2019 – 2022</p>
             <p>Diplôme de technicien supérieur en informatique.</p>
           </article>
         </div>
-        <h3 class="courses-title reveal">Cours marquants (UQTR)</h3>
+
+        <h3 class="sub-title">Cours marquants (UQTR)</h3>
         <div class="courses">
-          <div class="course-group reveal">
+          <div class="course-group">
             <h4>Science des données</h4>
             <ul>
               <li>Introduction à la science des données</li>
@@ -218,12 +364,14 @@
               <li>Probabilités et statistiques</li>
             </ul>
           </div>
-          <div class="course-group reveal">
+          <div class="course-group">
             <h4>Bases de données</h4>
             <ul>
               <li>Bases de données I</li>
               <li>Bases de données II</li>
             </ul>
+          </div>
+          <div class="course-group">
             <h4>Développement</h4>
             <ul>
               <li>Programmation Web</li>
@@ -234,7 +382,7 @@
               <li>Structures de données et algorithmes</li>
             </ul>
           </div>
-          <div class="course-group reveal">
+          <div class="course-group">
             <h4>Compléments</h4>
             <ul>
               <li>Traitement d'image</li>
@@ -242,27 +390,30 @@
               <li>Réseaux d'ordinateurs I</li>
               <li>Mathématiques pour informaticiens I &amp; II</li>
             </ul>
+          </div>
+          <div class="course-group">
             <h4>Certification en cours</h4>
             <ul>
               <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
             </ul>
           </div>
         </div>
-        <h3 class="courses-title reveal">Compétences</h3>
-        <div class="skills reveal">
-          <div class="skill-group">
+
+        <h3 class="sub-title">Compétences</h3>
+        <div class="skills-list">
+          <div class="skill-row">
             <h4>Langages</h4>
             <p>Python · SQL · Java · JavaScript · C# · C · C++ · PHP · HTML / CSS</p>
           </div>
-          <div class="skill-group">
+          <div class="skill-row">
             <h4>Data &amp; BI</h4>
             <p>Power BI · DAX · ETL · Pandas · scikit-learn · TensorFlow / Keras · YOLOv8 · Modélisation prédictive</p>
           </div>
-          <div class="skill-group">
+          <div class="skill-row">
             <h4>Web &amp; Backend</h4>
             <p>FastAPI · React · Node.js / Express · Spring Boot · PostgreSQL · MySQL · MongoDB</p>
           </div>
-          <div class="skill-group">
+          <div class="skill-row">
             <h4>Outils</h4>
             <p>Azure · Docker · Git / GitHub · Jira</p>
           </div>
@@ -273,20 +424,22 @@
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container narrow reveal">
+        <span class="section-num">06 — Contact</span>
         <h2>Contact</h2>
         <p>Vous recrutez pour un poste junior en données ou en BI&nbsp;? Écrivez-moi sur LinkedIn ou explorez mon GitHub.</p>
-        <div class="hero-actions">
-          <a class="btn" href="cv-cheikhouna-kebe.pdf" download="CV-Cheikhouna-Kebe.pdf">⬇ Télécharger mon CV</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/cheikhouna-kebe-2bb601396" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-outline" href="https://github.com/chounana01" target="_blank" rel="noopener">GitHub</a>
+        <div class="contact-links">
+          <a class="accent" href="cv-cheikhouna-kebe.pdf" download="CV-Cheikhouna-Kebe.pdf">⬇ Télécharger mon CV</a>
+          <a href="https://www.linkedin.com/in/cheikhouna-kebe-2bb601396" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/chounana01" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container wide footer-inner">
       <p>© 2026 Cheikhouna Kébé — Les données du dashboard de prospection CRM sont 100&nbsp;% synthétiques.</p>
+      <a href="#top">Retour en haut ↑</a>
     </div>
   </footer>
 
