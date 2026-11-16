@@ -1,18 +1,21 @@
-/* Portfolio v4 — modèle « sidebar » : barre latérale bleu nuit + contenu clair.
-   Reprend la maquette sidebar et toutes les nouveautés de la v3 (anneau qui
-   tourne, animations au défilement, galerie, visuels des projets).
+/* Portfolio v5 — modèle « sidebar » : tout le site en bleu.
+   Barre latérale bleu nuit (#0f2a43), colonne de contenu bleu moyen
+   (#143c5e), cartes et panneaux bleu légèrement plus clair (#1a4a6e),
+   texte blanc / bleu clair, accent cyan #38bdf8.
+   Anneau autour de la photo : 4 arcs SVG qui tournent.
    Polices système uniquement, aucune requête externe. */
 
 :root {
   --navy: #0f2a43;
   --navy-light: #1a3d5e;
-  --accent: #38bdf8;          /* cyan — anneau et détails sur fond sombre */
-  --accent-dark: #0284c7;     /* cyan foncé — accents sur fond clair */
+  --accent: #38bdf8;          /* cyan — anneau, détails, liens sur fond bleu */
+  --accent-dark: #7dd3fc;     /* cyan clair — accents lisibles sur fond bleu */
   --sky: #9fc3e0;
-  --ink: #1f2937;
-  --grey: #4b5563;
-  --line: #dbe3ea;
-  --bg: #f4f6f8;
+  --ink: #eaf2f8;             /* texte principal sur fond bleu */
+  --grey: #a8c8e0;            /* texte secondaire sur fond bleu */
+  --line: #2a5a80;            /* bordures sur fond bleu */
+  --bg: #1a4a6e;              /* cartes et panneaux */
+  --content-bg: #143c5e;      /* colonne de contenu */
   --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -24,12 +27,19 @@ body {
   margin: 0;
   font-family: var(--sans);
   color: var(--ink);
-  background: var(--bg);
+  background: var(--content-bg);
   line-height: 1.6;
 }
 
 a { color: var(--navy); }
 a:hover { text-decoration: none; }
+
+/* Liens dans la colonne de contenu (fond bleu) : cyan clair.
+   Les boutons gardent leurs propres couleurs (texte sombre sur fond
+   cyan pour le bouton plein, blanc pour le bouton contour). */
+.content a { color: var(--accent); }
+.content a.btn { color: var(--navy); }
+.content a.btn-outline { color: #ffffff; }
 
 /* ---------- Révélation au défilement (masqué seulement si JS actif) ---------- */
 html.js .reveal {
@@ -55,7 +65,9 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   padding: 40px 28px;
 }
 
-/* Photo en cercle + anneau en pointillés qui tourne (20 s par tour). */
+/* Photo en cercle + anneau de 4 arcs SVG qui tourne (20 s par tour).
+   Le SVG remplit le conteneur 166×166, le cercle (r=80, centre 83,83)
+   est concentrique avec la photo de 150 px centrée dedans. */
 .sidebar-photo-wrap {
   position: relative;
   width: 166px;
@@ -77,20 +89,9 @@ html.js .reveal.visible { opacity: 1; transform: none; }
 .sidebar-ring {
   position: absolute;
   inset: 0;
-  border: 3px dashed var(--accent);
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   animation: spin 20s linear infinite;
-}
-.sidebar-ring-dot {
-  position: absolute;
-  top: -7px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  margin-left: -6px;
-  background: var(--accent);
-  border-radius: 50%;
-  border: 2px solid var(--navy);
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -170,20 +171,20 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   display: inline-block;
   padding: 10px 18px;
   border-radius: 6px;
-  background: var(--navy);
-  color: #ffffff;
+  background: var(--accent);
+  color: var(--navy);
   text-decoration: none;
   font-weight: 600;
   text-align: center;
 }
-.btn:hover { background: var(--navy-light); }
+.btn:hover { background: var(--accent-dark); }
 
 .btn-outline {
   background: transparent;
-  color: var(--navy);
-  border: 2px solid var(--navy);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
 }
-.btn-outline:hover { background: #e8eef4; }
+.btn-outline:hover { background: rgba(255, 255, 255, 0.12); }
 
 .btn-light {
   background: #ffffff;
@@ -203,7 +204,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   flex: 1;
   min-width: 0;
   padding: 48px 56px;
-  background: #ffffff;
+  background: var(--content-bg);
 }
 
 .section { margin-bottom: 56px; }
@@ -222,16 +223,16 @@ html.js .reveal.visible { opacity: 1; transform: none; }
 .content h2 {
   margin: 0 0 16px;
   font-size: 1.6rem;
-  color: var(--navy);
-  border-bottom: 3px solid var(--navy);
+  color: #ffffff;
+  border-bottom: 3px solid var(--accent);
   padding-bottom: 8px;
 }
 
-.content h3 { color: var(--navy); }
+.content h3 { color: #ffffff; }
 
 .lead {
   font-size: 1.1rem;
-  color: #374151;
+  color: #ffffff;
 }
 
 .about-points {
@@ -251,7 +252,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
 .stat {
   padding: 20px 16px;
   background: var(--bg);
-  border-left: 4px solid var(--navy);
+  border-left: 4px solid var(--accent);
   border-radius: 6px;
   text-align: center;
 }
@@ -259,7 +260,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   display: block;
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--navy);
+  color: #ffffff;
 }
 .stat-label {
   display: block;
@@ -273,7 +274,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   list-style: none;
   margin: 0;
   padding: 0 0 0 20px;
-  border-left: 3px solid var(--navy);
+  border-left: 3px solid var(--accent);
 }
 .timeline li { margin-bottom: 28px; }
 .timeline li:last-child { margin-bottom: 0; }
@@ -282,8 +283,8 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   margin-bottom: 4px;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #ffffff;
-  background: var(--navy);
+  color: var(--navy);
+  background: var(--accent);
   padding: 2px 10px;
   border-radius: 20px;
 }
@@ -361,7 +362,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   object-position: top center;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: #fafafa;
+  background: var(--bg);
 }
 .project-card-wide .project-visual img { height: 300px; }
 .project-visual figcaption {
@@ -370,21 +371,21 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   padding-top: 10px;
   line-height: 1.5;
 }
-.chart-svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.chart-svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
 .chart-group { font: 600 11px var(--sans); letter-spacing: 0.14em; fill: var(--grey); text-transform: uppercase; }
 .chart-label { font: 400 13px var(--sans); fill: var(--ink); }
-.chart-bar { fill: var(--navy); }
-.chart-bar-accent { fill: var(--accent-dark); }
+.chart-bar { fill: #7dd3fc; }
+.chart-bar-accent { fill: var(--accent); }
 .chart-value { font: 600 13px var(--sans); fill: var(--accent-dark); }
 .chart-ref { stroke: var(--accent-dark); stroke-width: 1.5; stroke-dasharray: 5 4; }
 .chart-ref-label { font: 400 12px var(--sans); fill: var(--accent-dark); }
 
 /* Mini-maquette de tableau de bord (Power BI). */
-.mini-dash { border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px 14px; background: #fff; }
-.mini-dash-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+.mini-dash { border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px 14px; background: var(--bg); }
+.mini-dash-title { font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 14px; }
 .mini-dash-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .mini-kpi { border-top: 3px solid var(--accent-dark); padding-top: 8px; }
-.mini-kpi span { display: block; font-size: 1.05rem; font-weight: 800; color: var(--navy); line-height: 1.1; white-space: nowrap; }
+.mini-kpi span { display: block; font-size: 1.05rem; font-weight: 800; color: #ffffff; line-height: 1.1; white-space: nowrap; }
 .mini-kpi small { display: block; font-size: 0.75rem; color: var(--grey); margin-top: 4px; line-height: 1.4; }
 .mini-dash-bars {
   display: flex;
@@ -395,18 +396,18 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   padding-top: 12px;
   border-top: 1px solid var(--line);
 }
-.mini-dash-bars span { flex: 1; background: var(--navy); opacity: 0.85; }
-.mini-dash-bars span:nth-child(even) { background: var(--accent-dark); }
+.mini-dash-bars span { flex: 1; background: #7dd3fc; opacity: 0.85; }
+.mini-dash-bars span:nth-child(even) { background: var(--accent); }
 
 /* Illustration YOLOv8. */
-.yolo-bg { fill: #f4f6f8; }
-.yolo-road { fill: #e2e8f0; }
+.yolo-bg { fill: #123a5c; }
+.yolo-road { fill: #0f2a43; }
 .yolo-line { stroke: #fff; stroke-width: 3; stroke-dasharray: 18 14; }
-.yolo-car { fill: #3a3a3a; }
-.yolo-wheel { fill: #1a1a1a; }
-.yolo-box { fill: none; stroke: var(--accent-dark); stroke-width: 2; stroke-dasharray: 6 4; }
-.yolo-tag { fill: var(--accent-dark); }
-.yolo-tag-text { font: 600 12px var(--sans); fill: #fff; }
+.yolo-car { fill: #dbe7f0; }
+.yolo-wheel { fill: #0f2a43; }
+.yolo-box { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 4; }
+.yolo-tag { fill: var(--accent); }
+.yolo-tag-text { font: 600 12px var(--sans); fill: #0f2a43; }
 
 /* Mini-tableaux d'interface (maquettes). */
 .mini-table {
@@ -414,7 +415,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   border-collapse: collapse;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: #fff;
+  background: var(--bg);
   font-size: 0.9rem;
 }
 .mini-table caption {
@@ -462,7 +463,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
 }
 .degree-card h3 { margin: 0 0 6px; font-size: 1.1rem; }
 .degree-card p { margin: 0 0 6px; }
-.degree-meta { font-weight: 600; color: #374151; }
+.degree-meta { font-weight: 600; color: var(--sky); }
 
 .courses-title { margin: 28px 0 12px; font-size: 1.15rem; }
 .courses {
@@ -470,7 +471,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-.course-group h4 { margin: 0 0 6px; color: var(--navy); }
+.course-group h4 { margin: 0 0 6px; color: #ffffff; }
 .course-group ul { margin: 0 0 16px; padding-left: 20px; }
 .course-group li { margin-bottom: 3px; }
 
@@ -485,14 +486,14 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   padding-top: 24px;
   border-top: 1px solid var(--line);
   font-size: 0.85rem;
-  color: #6b7280;
+  color: var(--sky);
   display: flex;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
 }
 .site-footer p { margin: 0; }
-.site-footer a { color: #6b7280; }
+.site-footer a { color: var(--sky); }
 
 /* ---------- Mobile : la barre latérale passe au-dessus ---------- */
 @media (max-width: 820px) {
